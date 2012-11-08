@@ -14,7 +14,7 @@ module Mandrill
             @host = 'https://mandrillapp.com'
             @path = '/api/1.0/'
 
-            @session = Excon.new @host
+            @session = Excon.new(@host, { :nonblock => false })
             @debug = debug
 
             if not apikey
